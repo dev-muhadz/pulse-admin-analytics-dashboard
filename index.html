@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pulse admin and analytics dashboard UI kit">
+<title>Pulse — Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">P</span><span>PULSE</span></a>
+  <button class="collapse" id="collapse" aria-label="Collapse sidebar">‹</button>
+  <nav class="side-nav">
+    <p>Workspace</p>
+    <a class="active" href="index.html"><span>⌂</span><b>Dashboard</b></a>
+    <a href="#analytics"><span>◈</span><b>Analytics</b></a>
+    <a href="users.html"><span>◎</span><b>Users</b></a>
+    <p>Manage</p>
+    <a href="#transactions"><span>▣</span><b>Transactions</b></a>
+    <a href="#reports"><span>▤</span><b>Reports</b></a>
+    <a href="#settings"><span>⚙</span><b>Settings</b></a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="upgrade"><strong>Need more power?</strong><small>Unlock advanced reports and automation.</small><button>Upgrade plan</button></div>
+  </div>
+</aside>
+<div class="drawer-shade" id="shade"></div>
+
+<div class="shell">
+<header class="topbar">
+  <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+  <label class="search"><span>⌕</span><input placeholder="Search anything..." aria-label="Global search"></label>
+  <div class="top-actions">
+    <button class="icon-btn" aria-label="Notifications">♢<i>3</i></button>
+    <button class="theme-btn" id="theme" aria-label="Toggle theme">☾</button>
+    <button class="profile"><span class="avatar">AM</span><span class="profile-name"><b>Alex Morgan</b><small>Administrator</small></span><span>⌄</span></button>
+  </div>
+</header>
+
+<main class="main">
+<section class="page-head">
+  <div><p class="kicker">Tuesday, August 18, 2026</p><h1>Good morning, Alex <span>✦</span></h1><p>Here's what's happening across your business today.</p></div>
+  <button class="export">↓ Export report</button>
+</section>
+
+<section class="metrics">
+  <article class="metric-card"><div class="metric-top"><span>Total revenue</span><b class="metric-icon purple">$</b></div><strong>$128,430</strong><footer><span class="up">↗ 12.8%</span><small>vs last month</small></footer></article>
+  <article class="metric-card"><div class="metric-top"><span>Active users</span><b class="metric-icon blue">◎</b></div><strong>24,892</strong><footer><span class="up">↗ 8.4%</span><small>vs last month</small></footer></article>
+  <article class="metric-card"><div class="metric-top"><span>Conversion rate</span><b class="metric-icon orange">%</b></div><strong>6.24%</strong><footer><span class="down">↘ 1.2%</span><small>vs last month</small></footer></article>
+  <article class="metric-card"><div class="metric-top"><span>Avg. order value</span><b class="metric-icon green">◆</b></div><strong>$84.20</strong><footer><span class="up">↗ 5.7%</span><small>vs last month</small></footer></article>
+</section>
+
+<section class="dashboard-grid" id="analytics">
+<article class="panel sales">
+<header><div><h2>Revenue overview</h2><p>Track your revenue performance over time.</p></div><select><option>Last 30 days</option><option>Last 90 days</option><option>This year</option></select></header>
+<div class="chart-wrap"><canvas id="salesChart"></canvas></div>
+</article>
+<article class="panel sources">
+<header><div><h2>Traffic sources</h2><p>Where your visitors come from.</p></div></header>
+<div class="donut-wrap"><canvas id="trafficChart"></canvas></div>
+<div class="legend">
+<span><i class="dot d1"></i>Organic <b>42%</b></span>
+<span><i class="dot d2"></i>Direct <b>28%</b></span>
+<span><i class="dot d3"></i>Social <b>18%</b></span>
+<span><i class="dot d4"></i>Referral <b>12%</b></span>
+</div>
+</article>
+</section>
+
+<section class="lower-grid">
+<article class="panel activity">
+<header><div><h2>Recent activity</h2><p>Latest events from your workspace.</p></div><a href="#">View all</a></header>
+<div class="activity-list">
+<div><span class="event purple-bg">↗</span><p><b>New subscription</b><small>Olivia Carter upgraded to Pro</small></p><time>2m ago</time></div>
+<div><span class="event blue-bg">◎</span><p><b>New user registered</b><small>James Wilson joined your workspace</small></p><time>18m ago</time></div>
+<div><span class="event green-bg">$</span><p><b>Payment received</b><small>Invoice #INV-2048 was paid</small></p><time>42m ago</time></div>
+<div><span class="event orange-bg">!</span><p><b>Payment failed</b><small>Card ending in 4821 needs attention</small></p><time>1h ago</time></div>
+</div>
+</article>
+<article class="panel mini-goal">
+<header><div><h2>Monthly goal</h2><p>Revenue target</p></div><b>78%</b></header>
+<div class="progress"><span></span></div>
+<strong>$78,420 <small>of $100,000</small></strong>
+<p>You're on track to hit your target this month.</p>
+</article>
+</section>
+
+<section class="panel transactions" id="transactions">
+<header><div><h2>Recent transactions</h2><p>Monitor your latest payments.</p></div><a class="view-link" href="users.html">View all transactions →</a></header>
+<div class="table-scroll">
+<table><thead><tr><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th><th>Method</th><th></th></tr></thead>
+<tbody>
+<tr><td><span class="customer"><i>OC</i><b>Olivia Carter<small>olivia@example.com</small></b></span></td><td>Aug 18, 2026</td><td><strong>$240.00</strong></td><td><span class="status success">Completed</span></td><td>•••• 4242</td><td>•••</td></tr>
+<tr><td><span class="customer"><i>JW</i><b>James Wilson<small>james@example.com</small></b></span></td><td>Aug 18, 2026</td><td><strong>$89.00</strong></td><td><span class="status success">Completed</span></td><td>•••• 1189</td><td>•••</td></tr>
+<tr><td><span class="customer"><i>SA</i><b>Sophia Adams<small>sophia@example.com</small></b></span></td><td>Aug 17, 2026</td><td><strong>$540.00</strong></td><td><span class="status pending">Pending</span></td><td>•••• 7731</td><td>•••</td></tr>
+<tr><td><span class="customer"><i>MB</i><b>Marcus Brown<small>marcus@example.com</small></b></span></td><td>Aug 17, 2026</td><td><strong>$125.00</strong></td><td><span class="status failed">Failed</span></td><td>•••• 6204</td><td>•••</td></tr>
+</tbody></table>
+</div>
+</section>
+</main>
+<footer class="mobile-foot">Pulse Admin UI · Built with HTML, CSS & Vanilla JS</footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
