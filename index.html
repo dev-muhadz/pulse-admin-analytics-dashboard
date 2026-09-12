@@ -26,7 +26,7 @@
     <a href="#settings"><span>⚙</span><b>Settings</b></a>
   </nav>
   <div class="sidebar-bottom">
-    <div class="upgrade"><strong>Need more power?</strong><small>Unlock advanced reports and automation.</small><button>Upgrade plan</button></div>
+    <div class="upgrade"><strong>Need more power?</strong><small>Unlock advanced reports and automation.</small><button type="button">Upgrade plan</button></div>
   </div>
 </aside>
 <div class="drawer-shade" id="shade"></div>
@@ -38,14 +38,14 @@
   <div class="top-actions">
     <button class="icon-btn" aria-label="Notifications">♢<i>3</i></button>
     <button class="theme-btn" id="theme" aria-label="Toggle theme">☾</button>
-    <button class="profile"><span class="avatar">AM</span><span class="profile-name"><b>Alex Morgan</b><small>Administrator</small></span><span>⌄</span></button>
+    <button class="profile" type="button" aria-label="Open profile menu"><span class="avatar">AM</span><span class="profile-name"><b>Alex Morgan</b><small>Administrator</small></span><span>⌄</span></button>
   </div>
 </header>
 
 <main class="main">
 <section class="page-head">
-  <div><p class="kicker">Tuesday, August 18, 2026</p><h1>Good morning, Alex <span>✦</span></h1><p>Here's what's happening across your business today.</p></div>
-  <button class="export">↓ Export report</button>
+  <div><p class="kicker" id="dashboardDate">Loading date…</p><h1 id="dashboardGreeting">Good morning, Alex <span>✦</span></h1><p>Here's what's happening across your business today.</p></div>
+  <button class="export" type="button">↓ Export report</button>
 </section>
 
 <section class="metrics">
