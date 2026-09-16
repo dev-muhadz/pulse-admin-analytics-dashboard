@@ -1,0 +1,27 @@
+/* Phase 2 navigation fixes: keep the main header accessible while scrolling. */
+.topbar{
+  position:fixed;
+  top:0;
+  right:0;
+  left:var(--sidebar-width);
+  z-index:20;
+}
+
+.sidebar.mini ~ .shell .topbar{
+  left:var(--mini-width);
+}
+
+.main{
+  padding-top:100px;
+}
+
+@media(max-width:760px){
+  .topbar{
+    left:0;
+    right:0;
+  }
+
+  .main{
+    padding-top:100px;
+  }
+}
